@@ -1,2 +1,2 @@
-# ASEmoji
-AS::Emoji
+# AS::Emoji
+[AS Universal Library] Emoji module
