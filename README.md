@@ -1,0 +1,2 @@
+# ASEmoji
+AS::Emoji
