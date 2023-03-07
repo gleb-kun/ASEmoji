@@ -6,7 +6,7 @@
 :heart::fist::v:
 
 Emoji for C++ Developers.
-List of supported emoji in [EmojiList.md](\EmojiList.md).
+List of supported emoji in [EmojiList.md](EmojiList.md).
 This implementation will contains all the emoji that are provided on the site [1].
 Currently, 16 emojis have been added to demonstrate the functionality (on Mar 7 2023).
 
@@ -30,7 +30,15 @@ Some cpp file:
     #iclude <ASEmoji.h>
     
 ## Sample
- 
+
+    #include <iostream>
+    #include <ASEmoji.h>
+    
+    int main()
+    {
+        std::cout << "Hello, World! " + AS::Emoji::getUtf8StringByName("Grinning Face with Smiling Eyes") << std::endl;
+        return 0;
+    }
  
 ## Links
  
