@@ -19,5 +19,19 @@
 | 1420  | left arrow curving right        | U+21AA                        | :arrow_right_hook:            |
 | 1485  | plus                            | U+2795 	                      | :heavy_plus_sign:             |
 | 1497  | currency exchange               | U+1F4B1                       | :currency_exchange:           |
+| 1621  | flag: Armenia                   | U+1F1E6 U+1F1F2 	          | :armenia:                     |
+| 1630  | flag: Azerbaijan                | U+1F1E6 U+1F1FF               | :azerbaijan:                  |
+| 1657  | flag: Switzerland               | U+1F1E8 U+1F1ED               | :switzerland:                 |
+| 1672  | flag: Germany                   | U+1F1E9 U+1F1EA               | :de:                          |
+| 1685  | flag: Spain                     | U+1F1EA U+1F1F8 	          | :es:                          |
+| 1693  | flag: France                    | U+1F1EB U+1F1F7 	          | :fr:                          |
 | 1695  | flag: United Kingdom            | U+1F1EC U+1F1E7               | :uk:                          |
+| 1697  | flag: Georgia                   | U+1F1EC U+1F1EA 	          | :georgia:                     |
+| 1729  | flag: Italy                     | U+1F1EE U+1F1F9               | :it:                          |
+| 1735  | flag: Kyrgyzstan                | U+1F1F0 U+1F1EC 	          | :kyrgyzstan:                  |
+| 1808  | flag: Romania                   | U+1F1F7 U+1F1F4 	          | :romania:                     |
 | 1810  | flag: Russia                    | U+1F1F7 U+1F1FA               | :ru:                          |
+| 1839  | flag: Tajikistan                | U+1F1F9 U+1F1EF               | :tajikistan:                  |
+| 1845  | flag: Turkey                    | U+1F1F9 U+1F1F7 	          | :tr:                          |
+| 1850  | flag: Ukraine                   | U+1F1FA U+1F1E6 	          | :ukraine:                     |
+| 1856  | flag: Uzbekistan                | U+1F1FA U+1F1FF 	          | :uzbekistan:                  |
