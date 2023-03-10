@@ -67,6 +67,9 @@ std::map<std::string, std::vector<char32_t>> AS::Emoji::mEmojiMapByName = {
         {"plus",                                            {0x00E29E95}},                                          // 14 // plus
         {"chartincreasing",                                 {0xF09F9388}},                                          // 15 // chart increasing
         {"chartdecreasing",                                 {0xF09F9389}},                                          // 16 // chart decreasing
+        {"graduationcap",                                   {0xF09F8E93}},                                          // 17 // graduation cap
+        {"pagefacingup",                                    {0xF09F9384}},                                          // 18 // page facing up
+        {"spiralnotepad",                                   {0xF09F9792}},                                          // 19 // spiral notepad
 };
 
 std::map<std::vector<char32_t>, std::vector<char32_t>> AS::Emoji::mEmojiMapByUtf32 = {
@@ -86,4 +89,7 @@ std::map<std::vector<char32_t>, std::vector<char32_t>> AS::Emoji::mEmojiMapByUtf
         {{0x00002795},                                      {0x00E29E95}},                                          // 14 // plus
         {{0x0001F4C8},                                      {0xF09F9388}},                                          // 15 // chart increasing
         {{0x0001F4C9},                                      {0xF09F9389}},                                          // 16 // chart decreasing
+        {{0x0001F393},                                      {0xF09F8E93}},                                          // 17 // graduation cap
+        {{0x0001F4C4},                                      {0xF09F9384}},                                          // 18 // page facing up
+        {{0x0001F5D2},                                      {0xF09F9792}},                                          // 19 // spiral notepad
 };

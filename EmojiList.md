@@ -18,3 +18,6 @@
 | 14  | plus                            | U+2795 	                    | :heavy_plus_sign:             |
 | 15  | chart increasing                | U+1F4C8 	                    | :chart_with_upwards_trend:    |
 | 16  | chart decreasing                | U+1F4C9 	                    | :chart_with_downwards_trend:  |
+| 17  | graduation cap                  | U+1F393 	                    | :mortar_board:                |
+| 18  | page facing up                  | U+1F4C4                       | :page_facing_up:              |
+| 19  | spiral notepad                  | U+1F5D2                       | :spiral_notepad:              |
