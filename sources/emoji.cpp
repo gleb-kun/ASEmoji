@@ -58,6 +58,10 @@ std::map<std::string, std::vector<char32_t>> AS::Emoji::mEmojiMapByName = {
         {"speechballoon",                                   {0xF09F92AC}},                                          // 161  // speech balloon
         {"handshake",                                       {0xF09FA49D}},                                          // 205  // handshake
         {"speakinghead",                                    {0xF09F97A3}},                                          // 525  // speaking head
+        {"soccerball",                                      {0x00E29ABD}},                                          // 1095 // soccer ball
+        {"videogame",                                       {0xF09F8EAE}},                                          // 1129 // video game
+        {"slotmachine",                                     {0xF09F8EB0}},                                          // 1131 // slot machine
+        {"gamedie",                                         {0xF09F8EB2}},                                          // 1132 // game die
         {"graduationcap",                                   {0xF09F8E93}},                                          // 1161 // graduation cap
         {"pagefacingup",                                    {0xF09F9384}},                                          // 1245 // page facing up
         {"moneybag",                                        {0xF09F92B0}},                                          // 1251 // money bag
@@ -65,6 +69,7 @@ std::map<std::string, std::vector<char32_t>> AS::Emoji::mEmojiMapByName = {
         {"chartincreasing",                                 {0xF09F9388}},                                          // 1290 // chart increasing
         {"chartdecreasing",                                 {0xF09F9389}},                                          // 1291 // chart decreasing
         {"gear",                                            {0xE29A99}},                                            // 1325 // gear
+        {"identificationcard",                              {0xF09FAAAA}},                                          // 1416 // identification card
         {"leftarrowcurvingright",                           {0xE286AA}},                                            // 1420 // left arrow curving right
         {"plus",                                            {0x00E29E95}},                                          // 1485 // plus
         {"currencyexchange",                                {0xF09F92B1}},                                          // 1497 // currency exchange
@@ -94,6 +99,10 @@ std::map<std::vector<char32_t>, std::vector<char32_t>> AS::Emoji::mEmojiMapByUtf
         {{0x0001F4AC},                                      {0xF09F92AC}},                                          // 161  // speech balloon
         {{0x0001F91D},                                      {0xF09FA49D}},                                          // 205  // handshake
         {{0x0001F5E3},                                      {0xF09F97A3}},                                          // 525  // speaking head
+        {{0x000026BD},                                      {0x00E29ABD}},                                          // 1095 // soccer ball
+        {{0x0001F3AE},                                      {0xF09F8EAE}},                                          // 1129 // video game
+        {{0x0001F3B0},                                      {0xF09F8EB0}},                                          // 1131 // slot machine
+        {{0x0001F3B2},                                      {0xF09F8EB2}},                                          // 1132 // game die
         {{0x0001F393},                                      {0xF09F8E93}},                                          // 1161 // graduation cap
         {{0x0001F4C4},                                      {0xF09F9384}},                                          // 1245 // page facing up
         {{0x0001F4B0},                                      {0xF09F92B0}},                                          // 1251 // money bag
@@ -101,6 +110,7 @@ std::map<std::vector<char32_t>, std::vector<char32_t>> AS::Emoji::mEmojiMapByUtf
         {{0x0001F4C8},                                      {0xF09F9388}},                                          // 1290 // chart increasing
         {{0x0001F4C9},                                      {0xF09F9389}},                                          // 1291 // chart decreasing
         {{0x00002699},                                      {0xE29A99}},                                            // 1325 // gear
+        {{0x0001FAAA},                                      {0xF09FAAAA}},                                          // 1416 // identification card
         {{0x000021AA},                                      {0xE286AA}},                                            // 1420 // left arrow curving right
         {{0x00002795},                                      {0x00E29E95}},                                          // 1485 // plus
         {{0x0001F4B1},                                      {0xF09F92B1}},                                          // 1497 // currency exchange
