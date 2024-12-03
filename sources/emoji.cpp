@@ -68,7 +68,11 @@ std::map<std::string, std::vector<char32_t>> AS::Emoji::mEmojiMapByName = {
         {"spiralnotepad",                                   {0xF09F9792}},                                          // 1287 // spiral notepad
         {"chartincreasing",                                 {0xF09F9388}},                                          // 1290 // chart increasing
         {"chartdecreasing",                                 {0xF09F9389}},                                          // 1291 // chart decreasing
+        {"outboxtray",                                      {0xF09F93A4}},                                          // 1297 // outbox tray
+        {"inboxtray",                                       {0xF09F93A5}},                                          // 1298 // inbox tray
         {"gear",                                            {0xE29A99}},                                            // 1325 // gear
+        {"pushpin",                                         {0xF09F938D}},                                          // 1326 // pushpin
+        {"paperclip",                                       {0xF09F938E}},                                          // 1328 // paperclip
         {"identificationcard",                              {0xF09FAAAA}},                                          // 1416 // identification card
         {"leftarrowcurvingright",                           {0xE286AA}},                                            // 1420 // left arrow curving right
         {"plus",                                            {0x00E29E95}},                                          // 1485 // plus
