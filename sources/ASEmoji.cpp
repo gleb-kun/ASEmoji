@@ -1,4 +1,4 @@
-#include "emoji.h"
+#include "ASEmoji.h"
 
 std::string AS::Emoji::getEmojiByName(const std::string& name)
 {

@@ -1,15 +1,16 @@
 PREFIX ?= /usr/local
 INCLUDE_DIR = $(PREFIX)/include/ASEmoji
 LIB_DIR = $(PREFIX)/lib
+CMAKE_DIR = $(PREFIX)/lib/cmake/ASEmoji
 
 SRC_DIR = sources
-HEADERS = ASEmoji.h
+HEADERS = headers/ASEmoji.h
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
-OBJS = $(SRCS:.cpp=.o)
+OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(SRC_DIR)/%.o)
 LIB_NAME = libASEmoji.a
 
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra -I.
+CXXFLAGS = -std=c++11 -Wall -Wextra -Iheaders
 AR = ar
 ARFLAGS = rcs
 
@@ -23,13 +24,9 @@ all: $(LIB_NAME)
 
 $(LIB_NAME): $(OBJS)
 	@echo "Creating static library $(LIB_NAME)"
-	@if $(AR) $(ARFLAGS) $@ $^; then \
-		echo "Library $(LIB_NAME) created successfully"; \
-	else \
-		echo "Failed to create library $(LIB_NAME)"; exit 1; \
-	fi
+	@$(AR) $(ARFLAGS) $@ $^
 
-%.o: %.cpp $(HEADERS)
+$(SRC_DIR)/%.o: $(SRC_DIR)/%.cpp $(HEADERS)
 	@echo "Compiling $<"
 	@if $(CXX) $(CXXFLAGS) -c $< -o $@; then \
 		echo "Compiled $< successfully"; \
@@ -39,21 +36,71 @@ $(LIB_NAME): $(OBJS)
 
 install: $(LIB_NAME)
 	@echo "Installing $(LIB_NAME) to $(DESTDIR)$(LIB_DIR)"
-	@if install -d $(DESTDIR)$(INCLUDE_DIR) && \
-	   install -d $(DESTDIR)$(LIB_DIR) && \
-	   install -m 644 $(HEADERS) $(DESTDIR)$(INCLUDE_DIR)/ && \
-	   install -m 644 $(LIB_NAME) $(DESTDIR)$(LIB_DIR)/; then \
-		echo "Installation complete"; \
+	@echo "Creating directories..."
+	@if install -d $(DESTDIR)$(INCLUDE_DIR); then \
+		echo "Created $(DESTDIR)$(INCLUDE_DIR)"; \
 	else \
-		echo "Installation failed"; exit 1; \
+		echo "Failed to create $(DESTDIR)$(INCLUDE_DIR)"; exit 1; \
+	fi
+	@if install -d $(DESTDIR)$(LIB_DIR); then \
+		echo "Created $(DESTDIR)$(LIB_DIR)"; \
+	else \
+		echo "Failed to create $(DESTDIR)$(LIB_DIR)"; exit 1; \
+	fi
+	@if install -d $(DESTDIR)$(CMAKE_DIR); then \
+		echo "Created $(DESTDIR)$(CMAKE_DIR)"; \
+	else \
+		echo "Failed to create $(DESTDIR)$(CMAKE_DIR)"; exit 1; \
+	fi
+
+	@echo "Installing header files..."
+	@if install -m 644 $(HEADERS) $(DESTDIR)$(INCLUDE_DIR)/; then \
+		echo "Header files installed successfully"; \
+	else \
+		echo "Failed to install header files"; exit 1; \
+	fi
+
+	@echo "Installing static library..."
+	@if install -m 644 $(LIB_NAME) $(DESTDIR)$(LIB_DIR)/; then \
+		echo "$(LIB_NAME) installed successfully"; \
+	else \
+		echo "Failed to install $(LIB_NAME)"; exit 1; \
+	fi
+
+	@echo "Installing CMake config files..."
+	@if install -m 644 cmake/ASEmojiConfig.cmake $(DESTDIR)$(CMAKE_DIR)/; then \
+		echo "ASEmojiConfig.cmake installed"; \
+	else \
+		echo "Failed to install ASEmojiConfig.cmake"; exit 1; \
+	fi
+
+	@if install -m 644 cmake/ASEmojiTargets.cmake $(DESTDIR)$(CMAKE_DIR)/; then \
+		echo "ASEmojiTargets.cmake installed"; \
+	else \
+		echo "Failed to install ASEmojiTargets.cmake"; exit 1; \
 	fi
 
 uninstall:
 	@echo "Uninstalling $(LIB_NAME)"
-	@if rm -rf $(DESTDIR)$(INCLUDE_DIR) && rm -f $(DESTDIR)$(LIB_DIR)/$(LIB_NAME); then \
-		echo "Uninstallation complete"; \
+	@echo "Removing static library..."
+	@if rm -f $(DESTDIR)$(LIB_DIR)/$(LIB_NAME); then \
+		echo "$(LIB_NAME) removed successfully"; \
 	else \
-		echo "Uninstallation failed"; exit 1; \
+		echo "Failed to remove $(LIB_NAME)"; exit 1; \
+	fi
+
+	@echo "Removing header files directory..."
+	@if rm -rf $(DESTDIR)$(INCLUDE_DIR); then \
+		echo "$(DESTDIR)$(INCLUDE_DIR) removed successfully"; \
+	else \
+		echo "Failed to remove $(DESTDIR)$(INCLUDE_DIR)"; exit 1; \
+	fi
+
+	@echo "Removing CMake config directory..."
+	@if rm -rf $(DESTDIR)$(CMAKE_DIR); then \
+		echo "$(DESTDIR)$(CMAKE_DIR) removed successfully"; \
+	else \
+		echo "Failed to remove $(DESTDIR)$(CMAKE_DIR)"; exit 1; \
 	fi
 
 clean:

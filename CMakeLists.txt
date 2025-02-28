@@ -4,16 +4,15 @@ project(ASEmoji)
 set(CMAKE_CXX_STANDARD 14)
 
 set(SOURCES
-        sources/emoji.cpp
+        sources/ASEmoji.cpp
         )
 
 set(HEADERS
-        sources/emoji.h
-        ASEmoji.h
+        headers/ASEmoji.h
         )
 
-add_library(ASEmoji ${SOURCES} ${HEADERS})
+add_library(ASEmoji STATIC ${SOURCES} ${HEADERS})
 
 target_include_directories(
-        ASEmoji PUBLIC ${PROJECT_SOURCE_DIR}
+        ASEmoji PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/headers
 )
