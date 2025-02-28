@@ -22,10 +22,12 @@ projects.
 First of all, it is possible to install the library into the system.
 This is done in the standard way:
 
-    git clone https://github.com/gleb-kun/ASEmoji.git
-    cd ASEmoji
-    make
-    sudo make install
+```shell
+git clone https://github.com/gleb-kun/ASEmoji.git
+cd ASEmoji
+make
+sudo make install
+```
 
 In this case, the library will be installed in the standard system directories:
 header files in `/usr/local/include/ASEmoji`,
@@ -55,11 +57,13 @@ int main()
 }
 ```
 
-### 1. Inclusion in project as git submodule
+### 2. Inclusion in project as git submodule
 
-You can use this library as a git submodule. A submodule is connected in your project directory:
+You can also use this library as a git submodule. A submodule is connected in your project directory:
 
-    git submodule add https://github.com/gleb-kun/ASEmoji.git
+```shell
+git submodule add https://github.com/gleb-kun/ASEmoji.git
+```
 
 To include **AS::Emoji** in your project via CMake, add the following lines to your `CMakeLists.txt`:
 
@@ -68,7 +72,7 @@ add_subdirectory(ASEmoji)
 target_link_libraries(${PROJECT_NAME} ASEmoji)
 ```
 
-In this case, the `ASEmoji` subdirectory was placed to the root folder of the project.
+In this case, the `ASEmoji` subdirectory was placed to the root folder of your project.
 Accordingly, in this case, you can use the library as follows:
 
 ```C++
@@ -90,6 +94,6 @@ The name of the library, namely the "AS" part, is an abbreviation for Additional
 ## Links
  
  [1] Full Emoji List, v15.0. URL: https://unicode.org/emoji/charts/full-emoji-list.html.<br />
- [2] GitHub. 99x/emojicpp. URL: https://github.com/99x/emojicpp.
+ [2] GitHub. 99x/emojicpp. URL: https://github.com/99x/emojicpp.<br />
  [3] GitHub. carpedm20/emoji. URL: https://github.com/carpedm20/emoji.
  
