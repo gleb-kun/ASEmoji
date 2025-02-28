@@ -14,11 +14,13 @@ namespace AS
     {
         public:
             static std::string getEmojiByName(const std::string& name);
+            static std::string emojize(const std::string& input, bool escape = true);
 
         private:
             static std::string toLowerCase(std::string string);
             static std::string removeDelimiters(std::string string);
             static std::string toStringFromUtf8Vector(const std::vector<unsigned char>& vector);
+            static bool isTokenFormatValid(const std::string& token);
 
         private:
             static std::unordered_map<std::string, std::vector<unsigned char>> mEmojiMapByName;

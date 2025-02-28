@@ -17,6 +17,59 @@ std::string AS::Emoji::getEmojiByName(const std::string& name)
     return EMOJI_ERROR_MESSAGE;
 }
 
+std::string AS::Emoji::emojize(const std::string& input, const bool escape)
+{
+    std::string result;
+    std::string currentToken;
+
+    for (size_t i = 0; i < input.size(); ++i)
+    {
+        if (escape && i + 1 < input.size() && input[i] == '\\' && input[i + 1] == ':')
+        {
+            if (!currentToken.empty())
+            {
+                result += currentToken + ":";
+                currentToken.clear();
+            }
+            else
+                result += ":";
+
+            ++i;
+        }
+        else
+        {
+            currentToken += input[i];
+
+            if (currentToken.front() != ':')
+            {
+                result += currentToken;
+                currentToken.clear();
+            }
+        }
+
+        if (isTokenFormatValid(currentToken))
+        {
+            std::string emoji = getEmojiByName(currentToken);
+            if (emoji != EMOJI_ERROR_MESSAGE)
+            {
+                result += emoji;
+                currentToken.clear();
+            }
+            else
+            {
+                currentToken.pop_back();
+                result += currentToken;
+                currentToken = ":";
+            }
+        }
+    }
+
+    if (!currentToken.empty())
+        result += currentToken;
+
+    return result;
+}
+
 std::string AS::Emoji::toLowerCase(std::string string)
 {
     std::transform(string.begin(), string.end(), string.begin(), [](unsigned char c) {
@@ -38,6 +91,14 @@ std::string AS::Emoji::toStringFromUtf8Vector(const std::vector<unsigned char>& 
 {
     std::string str(reinterpret_cast<const char*>(vector.data()), vector.size());
     return str;
+}
+
+bool AS::Emoji::isTokenFormatValid(const std::string& token)
+{
+    if (token.size() <= 2)
+        return false;
+
+    return token.front() == ':' && token.back() == ':';
 }
 
 std::unordered_map<std::string, std::vector<unsigned char>> AS::Emoji::mEmojiMapByName = {
