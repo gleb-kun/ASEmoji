@@ -32,7 +32,7 @@ def update_md(emoji_data, md_file):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python update_cpp.py <emoji_data_file> <md_file>")
+        print("Usage: python update_md.py <emoji_data_file> <md_file>")
         sys.exit(1)
 
     emoji_data_file = sys.argv[1]
