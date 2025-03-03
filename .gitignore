@@ -1,3 +1,6 @@
 # Folders
 __pycache__
 .idea
+
+# Files
+**.txt
