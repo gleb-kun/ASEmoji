@@ -6,6 +6,8 @@
 #include <unordered_map>
 #include <algorithm>
 
+#include "EmojiData.h"
+
 #define EMOJI_ERROR_MESSAGE "AS::Emoji(?)"
 
 namespace AS
@@ -23,7 +25,7 @@ namespace AS
             static bool isTokenFormatValid(const std::string& token);
 
         private:
-            static std::unordered_map<std::string, std::vector<unsigned char>> mEmojiMapByName;
+            static EmojiData  mEmojiData;
     };
 }
 

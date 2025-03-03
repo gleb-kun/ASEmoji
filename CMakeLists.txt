@@ -5,10 +5,12 @@ set(CMAKE_CXX_STANDARD 14)
 
 set(SOURCES
         sources/ASEmoji.cpp
+        sources/EmojiData.cpp
         )
 
 set(HEADERS
         headers/ASEmoji.h
+        headers/EmojiData.h
         )
 
 add_library(ASEmoji STATIC ${SOURCES} ${HEADERS})

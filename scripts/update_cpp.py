@@ -35,7 +35,7 @@ def numbers_to_hex_string(numbers):
     return hex_string
 
 def update_cpp(emoji_data, cpp_file):
-    start_marker = "std::unordered_map<std::string, std::vector<unsigned char>> AS::Emoji::mEmojiMapByName = {"
+    start_marker_pattern = r"std::unordered_map<std::string, std::vector<unsigned char>> AS::\w+::mEmojiMapByName = {"
     end_marker = "};"
 
     with open(cpp_file, "r", encoding="utf-8") as file:
@@ -43,7 +43,7 @@ def update_cpp(emoji_data, cpp_file):
 
     start_index = -1
     for i, line in enumerate(lines):
-        if start_marker in line:
+        if re.search(start_marker_pattern, line):
             start_index = i + 1
             break
 

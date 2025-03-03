@@ -4,7 +4,9 @@ LIB_DIR = $(PREFIX)/lib
 CMAKE_DIR = $(PREFIX)/lib/cmake/ASEmoji
 
 SRC_DIR = sources
-HEADERS = headers/ASEmoji.h
+HDR_DIR = headers
+
+HEADERS = $(wildcard $(HDR_DIR)/*.h)
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(SRC_DIR)/%.o)
 LIB_NAME = libASEmoji.a
