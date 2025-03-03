@@ -6,9 +6,10 @@ AS::Emoji C++ Library
 :heart::fist::v:
 
 Emoji for C++ Developers.
-List of supported emoji in [EmojiList.md](EmojiList.md).
-This implementation will contain all emojis presented on the [Unicode official site](https://unicode.org/emoji/charts/full-emoji-list.html) (Full Emoji List, v16.0) .
-Currently, 42 emojis have been added to demonstrate the functionality (on Feb 28 2025).
+List of supported emoji in [EmojiList.md](EmojiList.md). There are currently 3781 emoji supported in the library (Last updated March 3, 2025).
+This implementation contains all emojis presented on the [official Unicode website](https://unicode.org/emoji/charts/full-emoji-list.html) (Full Emoji List, v16.0).
+In addition, the library supports emojis based on skin color, gender, etc., as well as combinations.
+As a result, all _fully-qualified_ emojis presented in the [document](https://unicode.org/Public/emoji/latest/emoji-test.txt) are supported.
 
 This project was inspired by
 [emojicpp](https://github.com/99x/emojicpp) &
@@ -87,13 +88,25 @@ int main()
 }
 ```
 
-## Additional information
+## Develop
+
+### Main information
+
+The development of the **AS::Emoji** library has just begun.
+It is in a pre-release state, many functions may not work as intended.
+If you encounter a problem/have any wishes/questions,
+we will be glad to receive your post in [Issues](https://github.com/gleb-kun/ASEmoji/issues).
+The authors will be grateful for any contribution to the development.
+PR? Welcome! :blush::+1:
+
+### Additional information
 
 The name of the library, namely the "AS" part, is an abbreviation for Additional Software.
 
 ## Links
  
- [1] Full Emoji List, v15.0. URL: https://unicode.org/emoji/charts/full-emoji-list.html.<br />
- [2] GitHub. 99x/emojicpp. URL: https://github.com/99x/emojicpp.<br />
- [3] GitHub. carpedm20/emoji. URL: https://github.com/carpedm20/emoji.
+ [1] UNICODE. Full Emoji List, v15.0. URL: https://unicode.org/emoji/charts/full-emoji-list.html.<br/>
+ [2] UNICODE. emoji-test.txt the document. URL: https://unicode.org/Public/emoji/latest/emoji-test.txt.<br/>
+ [3] GitHub. 99x/emojicpp. URL: https://github.com/99x/emojicpp.<br/>
+ [4] GitHub. carpedm20/emoji. URL: https://github.com/carpedm20/emoji.
  
