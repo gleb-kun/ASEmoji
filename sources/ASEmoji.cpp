@@ -81,7 +81,7 @@ std::string AS::Emoji::toLowerCase(std::string string)
 std::string AS::Emoji::removeDelimiters(std::string string)
 {
     string.erase(std::remove_if(string.begin(), string.end(), [](const char c) {
-        return c == ' ' || c == '\t' || c == ':' || c == '_' || c == '-';
+        return c == ' ' || c == '\t' || c == ':' || c == '_' || c == '-' || c == '&' || c == '.';
     }), string.end());
 
     return string;

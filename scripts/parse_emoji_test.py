@@ -9,7 +9,8 @@ def parse_emoji_test(file_path):
             if not line or line.startswith("#"):
                 continue
 
-            match = regex.match(r"([0-9A-F ]+);\s+([^#]+)#\s+(.+?)\s+(E\d+\.\d+)\s+(.+)", line)
+            pattern = r"([0-9A-F ]+);\s+([^#]+)#\s+(.+?)\s+E(\d+\.\d+)\s+(.+)"
+            match = regex.match(pattern, line)
             if match:
                 codepoints, status, emoji, version, name = match.groups()
                 byte_array = [int(cp, 16) for cp in codepoints.split()]
@@ -22,6 +23,3 @@ def parse_emoji_test(file_path):
                 })
 
     return emoji_data
-
-file_path = "emoji-test.txt"  # Укажите путь к файлу
-emoji_list = parse_emoji_test(file_path)
