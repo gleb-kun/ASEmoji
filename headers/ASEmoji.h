@@ -19,6 +19,7 @@ namespace AS
             static std::string emojize(const std::string& input, bool escape = true);
 
         private:
+            static std::string createKey(const std::string& string);
             static std::string toLowerCase(std::string string);
             static std::string removeDelimiters(std::string string);
             static std::string toStringFromUtf8Vector(const std::vector<unsigned char>& vector);

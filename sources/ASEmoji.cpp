@@ -2,8 +2,7 @@
 
 std::string AS::Emoji::getEmojiByName(const std::string& name)
 {
-    std::string key = toLowerCase(name);
-    key = removeDelimiters(key);
+    const std::string key = createKey(name);
 
     const std::vector<unsigned char> utf8Vector = EmojiData::getEmojiByKey(key);
     if (!utf8Vector.empty())
@@ -65,6 +64,12 @@ std::string AS::Emoji::emojize(const std::string& input, const bool escape)
         result += currentToken;
 
     return result;
+}
+
+std::string AS::Emoji::createKey(const std::string& string)
+{
+    const std::string key = toLowerCase(string);
+    return removeDelimiters(key);
 }
 
 std::string AS::Emoji::toLowerCase(std::string string)
