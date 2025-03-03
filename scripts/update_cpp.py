@@ -26,13 +26,12 @@ def numbers_to_hex_string(numbers):
         chunk_size = length // parts
         chunks = [hex_bytes[i:i + chunk_size] for i in range(0, length, chunk_size)]
 
-        bytes_matrix_str = "\n\t\t".join(
-            ", ".join(f"0x{byte:02X}" for byte in chunk) for chunk in chunks
-        )
+        chunk_strings = [", ".join(f"0x{byte:02X}" for byte in chunk) for chunk in chunks]
+        bytes_matrix_str = ",\n\t\t".join(chunk_strings)
     else:
         bytes_matrix_str = ", ".join(f"0x{byte:02X}" for byte in hex_bytes)
 
-    hex_string = "\t{\n\t\t" + bytes_matrix_str + "\n\t}"
+    hex_string = f"\t{{\n\t\t{bytes_matrix_str},\n\t}}}},"
     return hex_string
 
 def update_cpp(emoji_data, cpp_file):
@@ -61,7 +60,9 @@ def update_cpp(emoji_data, cpp_file):
             key = create_key_name(emoji["name"])
             hex_string = numbers_to_hex_string(emoji["bytes"])
             comment = f"// {idx}\t// {emoji['name']}"
-            new_entries.append(f"\t{comment}\n\t\"{key}\",\n{hex_string}\n\n")
+            entries_line = f"\t{comment}\n\t{{\"{key}\",\n{hex_string}\n\n"
+            new_entries.append(entries_line)
+
             idx += 1
 
     lines[start_index:end_index] = ["\n"] + new_entries
