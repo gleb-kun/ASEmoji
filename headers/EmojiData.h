@@ -11,10 +11,6 @@ namespace AS
     {
         public:
             static std::vector<unsigned char> getEmojiByKey(const std::string& name);
-            static void addStr()
-            {
-                value += " dsa";
-            }
 
         private:
             static std::string value;
