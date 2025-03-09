@@ -105,7 +105,7 @@ The name of the library, namely the "AS" part, is an abbreviation for Additional
 
 ## Links
  
- [1] UNICODE. Full Emoji List, v15.0. URL: https://unicode.org/emoji/charts/full-emoji-list.html.<br/>
+ [1] UNICODE. Full Emoji List, v16.0. URL: https://unicode.org/emoji/charts/full-emoji-list.html.<br/>
  [2] UNICODE. emoji-test.txt the document. URL: https://unicode.org/Public/emoji/latest/emoji-test.txt.<br/>
  [3] GitHub. 99x/emojicpp. URL: https://github.com/99x/emojicpp.<br/>
  [4] GitHub. carpedm20/emoji. URL: https://github.com/carpedm20/emoji.
