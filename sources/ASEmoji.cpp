@@ -6,9 +6,7 @@ std::string AS::Emoji::getEmojiByName(const std::string& name)
 
     const std::vector<unsigned char> utf8Vector = EmojiData::getEmojiByKey(key);
     if (!utf8Vector.empty())
-    {
         return toStringFromUtf8Vector(utf8Vector);
-    }
 
     return EMOJI_ERROR_MESSAGE;
 }
@@ -18,7 +16,7 @@ std::string AS::Emoji::emojize(const std::string& input, const bool escape)
     std::string result;
     std::string currentToken;
 
-    for (size_t i = 0; i < input.size(); ++i)
+    for (size_t i = 0; i < input.size(); i++)
     {
         if (escape && i + 1 < input.size() && input[i] == '\\' && input[i + 1] == ':')
         {
@@ -30,7 +28,7 @@ std::string AS::Emoji::emojize(const std::string& input, const bool escape)
             else
                 result += ":";
 
-            ++i;
+            i++;
         }
         else
         {
