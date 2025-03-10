@@ -93,10 +93,10 @@ int main()
 ### Main information
 
 The development of the **AS::Emoji** library has just begun.
-It is in a pre-release state, many functions may not work as intended.
+Only the first version has been released, so many features may not work as intended.
 If you encounter a problem/have any wishes/questions,
 we will be glad to receive your post in [Issues](https://github.com/gleb-kun/ASEmoji/issues).
-The authors will be grateful for any contribution to the development.
+In the future, the developers strive to include all the features from similar libraries. The authors will be grateful for any contribution to the development.
 PR? Welcome! :blush::+1:
 
 ### Additional information
