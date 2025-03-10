@@ -52,7 +52,7 @@ Then you can use the library as follows:
 
 int main()
 {
-    std::cout << "Hello, World! " + AS::Emoji::getUtf8StringByName("Grinning Face with Smiling Eyes") << std::endl;
+    std::cout << "Hello, World! " + AS::Emoji::getEmojiByName("Grinning Face with Smiling Eyes") << std::endl;
     std::cout << AS::Emoji::emojize("Hello, World! :Grinning Face with Smiling Eyes:") << std::endl;
     return 0;
 }
@@ -82,7 +82,7 @@ Accordingly, in this case, you can use the library as follows:
 
 int main()
 {
-    std::cout << "Hello, World! " + AS::Emoji::getUtf8StringByName("Grinning Face with Smiling Eyes") << std::endl;
+    std::cout << "Hello, World! " + AS::Emoji::getEmojiByName("Grinning Face with Smiling Eyes") << std::endl;
     std::cout << AS::Emoji::emojize("Hello, World! :Grinning Face with Smiling Eyes:") << std::endl;
     return 0;
 }
